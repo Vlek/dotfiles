@@ -1,0 +1,11 @@
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.config/nvim/init.vim"
+alias vim="nvim"
+alias cls="clear"
+alias mux="tmuxinator"
+alias ls="ls --color -h --group-directories-first"
