@@ -1,0 +1,39 @@
+# Maintainer:   Vlek
+# URL:          https://github.com/vlek/dotfiles/cmus/winamp.theme
+
+### colors
+### {{{
+### Menu Title
+    set color_win_title_bg=18
+    set color_win_title_fg=231
+    set color_titleline_attr=default
+    set color_win_sel_attr=bold
+### window
+    set color_separator=18
+    set color_win_bg=16
+    set color_win_cur=46
+    set color_win_cur_sel_bg=18
+    set color_win_cur_sel_fg=231
+### inactive menu items
+    set color_win_inactive_cur_sel_bg=251
+    set color_win_inactive_cur_sel_fg=0
+    set color_win_inactive_sel_bg=0
+    set color_win_inactive_sel_fg=18
+### active/selected menu items
+    set color_win_sel_bg=18
+    set color_win_sel_fg=231
+    set color_win_dir=18
+    set color_win_fg=46
+### artist, album, and song
+    set color_titleline_bg=0
+    set color_titleline_fg=18
+### song timeline
+    set color_statusline_bg=236
+    set color_statusline_fg=231
+### command line
+    set color_cmdline_bg=0
+    set color_cmdline_fg=231
+### errors and info
+    set color_error=9
+    set color_info=11
+### }}}
