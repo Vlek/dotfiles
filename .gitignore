@@ -1,0 +1,2 @@
+# Add each folder or file path that should be whitelisted.
+!.gitignore
