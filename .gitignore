@@ -5,6 +5,7 @@
 # Add each folder or file path that should be whitelisted.
 !.gitignore
 
+# Finally, add config files to keep version controlled.
 !git/.gitconfig
 !tmux/tmux.conf
 
@@ -12,3 +13,7 @@
 
 !lvim/config.lua
 !rstudio/rstudio-prefs.json
+
+!i3/config
+!rofi/dracula.rasi
+!polybar/**
