@@ -1,0 +1,14 @@
+# Ignoring everything
+*
+!*/
+
+# Add each folder or file path that should be whitelisted.
+!.gitignore
+
+!git/.gitconfig
+!tmux/tmux.conf
+
+!ncmpcpp/bindings
+
+!lvim/config.lua
+!rstudio/rstudio-prefs.json
