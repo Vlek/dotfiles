@@ -6,7 +6,6 @@
 !.gitignore
 
 # Finally, add config files to keep version controlled.
-!git/.gitconfig
 !tmux/tmux.conf
 
 !ncmpcpp/bindings
