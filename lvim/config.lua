@@ -9,7 +9,8 @@ an executable
 
 -- general
 lvim.log.level = "error"
-lvim.format_on_save = true
+lvim.format_on_save.enabled = true
+lvim.format_on_save.timeout = 30000
 lvim.colorscheme = "dracula"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
@@ -23,6 +24,7 @@ lvim.keys.insert_mode["kj"] = "<Esc>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
+lvim.keys.normal_mode["<leader>w"] = false
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
@@ -41,7 +43,7 @@ lvim.builtin.telescope.defaults.mappings = {
     n = {
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-    },
+    }
 }
 
 -- Use which-key to add extra bindings with the leader-key prefix
@@ -53,8 +55,9 @@ lvim.builtin.which_key.mappings["t"] = {
     d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" }
 }
+
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -63,7 +66,6 @@ lvim.builtin.alpha.mode = "dashboard"
 --lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
---lvim.builtin.nvimtree.show_icons.git = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -84,7 +86,7 @@ lvim.builtin.treesitter.ensure_installed = {
     "rust",
     "toml",
     "typescript",
-    "yaml",
+    "yaml"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -127,11 +129,12 @@ formatters.setup {
             "typescript",
             "typescriptreact",
             "javascript",
-            "html",
+            --"html",
             "css",
             "markdown",
         },
     },
+    { command = "csharpier", filetypes = { "c_sharp" } }
 }
 
 -- set additional linters
@@ -143,23 +146,22 @@ linters.setup {
         command = "shellcheck",
         ---@usage arguments to pass to the formatter
         -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-        extra_args = { "--severity", "warning" },
+        extra_args = { "--severity", "warning" }
     },
     {
         command = "codespell",
         ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-        filetypes = { "javascript", "python" },
+        filetypes = { "javascript", "python" }
     },
     {
         command = "eslint",
-        filetypes = { "javascript" },
-    },
+        filetypes = { "javascript" }
+    }
 }
 
 --Additional Plugins
 lvim.plugins = {
-    -- {"folke/tokyonight.nvim"},
-    { "dracula/vim", as = 'dracula' },
+    { "dracula/vim", name = 'dracula' },
     {
         "folke/trouble.nvim",
         cmd = "TroubleToggle",
@@ -171,14 +173,14 @@ lvim.plugins = {
 
 lvim.autocommands = {
     {
-        "BufEnter,BufRead,BufWinEnter",
+        { "BufEnter", "BufRead", "BufWinEnter" },
         {
             pattern = { "*.lua" },
             command = "setlocal ts=4 sw=4"
         }
     },
     {
-        "BufEnter,BufRead,BufWinEnter",
+        { "BufEnter", "BufRead", "BufWinEnter" },
         {
             pattern = { "*.wiki", "*.md" },
             --command = "setlocal textwidth=80 spell",
@@ -188,5 +190,5 @@ lvim.autocommands = {
                 lvim.builtin.cmp.active = false
             end
         }
-    },
+    }
 }
