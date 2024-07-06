@@ -206,3 +206,8 @@ lvim.autocommands = {
         }
     }
 }
+
+-- Adds a floating window for exceptions.
+-- Makes it much easier to read them as most messages get cut off at the
+-- end of lines, especially for longer errors.
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
