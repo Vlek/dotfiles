@@ -16,3 +16,5 @@
 !i3/config
 !rofi/dracula.rasi
 !polybar/**
+
+!../.vimrc
