@@ -18,13 +18,13 @@ lvim.leader = ","
 
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<leader>n"] = "<Cmd>NvimTreeToggle<CR>"
-lvim.keys.normal_mode["<leader> "] = ":noh<cr>"
+lvim.keys.normal_mode["<Leader>n"] = "<Cmd>NvimTreeToggle<CR>"
+lvim.keys.normal_mode["<Leader> "] = ":noh<cr>"
 lvim.keys.insert_mode["kj"] = "<Esc>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
-lvim.keys.normal_mode["<leader>w"] = false
+lvim.keys.normal_mode["<Leader>w"] = false
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
@@ -125,6 +125,7 @@ formatters.setup {
     },
     {
         command = "isort",
+        extra_args = { "--profile", "black" },
         filetypes = { "python" }
     },
     {
@@ -148,8 +149,7 @@ formatters.setup {
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
     {
-        command = "flake8",
-        extra_args = { "--max-line-length", "120" },
+        command = "ruff",
         filetypes = { "python" },
     },
     {
