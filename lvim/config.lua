@@ -18,13 +18,18 @@ lvim.leader = ","
 
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<Leader>n"] = "<Cmd>NvimTreeToggle<CR>"
-lvim.keys.normal_mode["<Leader> "] = ":noh<cr>"
+lvim.keys.normal_mode["<leader>n"] = "<Cmd>NvimTreeToggle<CR>"
+lvim.keys.normal_mode["<leader> "] = ":noh<cr>"
 lvim.keys.insert_mode["kj"] = "<Esc>"
+
+-- Navigating tabs
+lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"
+
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
-lvim.keys.normal_mode["<Leader>w"] = false
+lvim.keys.normal_mode["<leader>w"] = ""
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
@@ -200,7 +205,7 @@ lvim.autocommands = {
             pattern = { "*.wiki", "*.md" },
             --command = "setlocal textwidth=80 spell",
             callback = function()
-                vim.cmd [[setlocal textwidth=80 spell]]
+                vim.cmd [[setlocal textwidth=80 spell wrap]]
                 -- We need this as a callback so we can get rid of the completion window.
                 lvim.builtin.cmp.active = false
             end
