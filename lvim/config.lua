@@ -205,7 +205,7 @@ lvim.autocommands = {
             pattern = { "*.wiki", "*.md" },
             --command = "setlocal textwidth=80 spell",
             callback = function()
-                vim.cmd [[setlocal textwidth=80 spell wrap]]
+                vim.cmd [[setlocal textwidth=80 spell formatoptions+=t]]
                 -- We need this as a callback so we can get rid of the completion window.
                 lvim.builtin.cmp.active = false
             end
