@@ -18,3 +18,5 @@
 !polybar/**
 
 !../.vimrc
+
+!nvim/**
