@@ -14,4 +14,4 @@
 !rofi/dracula.rasi
 !polybar/**
 
-!nvim/**
+!./nvim/
