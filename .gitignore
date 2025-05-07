@@ -14,5 +14,5 @@
 !rofi/dracula.rasi
 !polybar/**
 
-./nvim/**/lazy-lock.json
 !./nvim/
+./nvim/**/lazy-lock.json
