@@ -38,6 +38,7 @@ return {
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
         vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]],
+        vim.cmd [[autocmd BufNewFile,BufRead *.md set wrap | set breakindent | set linebreak | set textwidth=80 | set formatoptions+=t]],
       },
     },
     -- Mappings can be configured through AstroCore as well.

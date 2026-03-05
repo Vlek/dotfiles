@@ -4,17 +4,19 @@ return {
     ---@type AstroCoreOpts
     opts = {
       mappings = {
-        -- first key is the mode
+        -- Normal mode
         n = {
           -- second key is the lefthand side of the map
+          ["<leader>n"] = { "<cmd>Neotree toggle<cr>" },
         },
         t = {
           -- setting a mapping to false will disable it
           -- ["<esc>"] = false,
         },
+        -- Insert mode
         i = {
-          ["kj"] = { "<esc>", desc = "Leave i mode." }
-        }
+          ["kj"] = { "<esc>", desc = "Leave i mode." },
+        },
       },
     },
   },
